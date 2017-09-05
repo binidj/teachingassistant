@@ -15,7 +15,6 @@ export class AppComponent {
    constructor(private alunoService: AlunoService) {}
 
    aluno: Aluno = new Aluno();
-
    alunos: Aluno[] = [];
    cpfduplicado: boolean = false;
 
