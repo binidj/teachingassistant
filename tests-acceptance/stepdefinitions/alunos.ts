@@ -17,15 +17,8 @@ defineSupportCode(function ({ Given, When, Then }) {
 
     Given(/^I cannot see a student with CPF "(\d*)" in the students list$/, async (cpf) => {
         var allcpfs : ElementArrayFinder = element.all(by.name('cpflist'));
-<<<<<<< HEAD
-        await allcpfs;
         var samecpfs = allcpfs.filter(elem =>
                                       elem.getText().then(text => text === cpf));
-        await samecpfs;
-=======
-        var samecpfs = allcpfs.filter(elem =>
-                                      elem.getText().then(text => text === cpf));
->>>>>>> bd0a59b... criacao da feature e testes de alunos
         await samecpfs.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(0));
     });
 
