@@ -1,5 +1,5 @@
 import { CadastroDeAlunos } from '../cadastrodealunos';
-import { Aluno } from '../../../gui/ta-gui/src/app/aluno';
+import { Aluno } from '../../common/aluno';
 
 describe("O cadastro de alunos", () => {
   var cadastro: CadastroDeAlunos;
@@ -14,7 +14,7 @@ describe("O cadastro de alunos", () => {
     var aluno: Aluno = new Aluno();
     aluno.nome = "Mariana";
     aluno.cpf = "683";
-    cadastro.criar(aluno);
+    cadastro.cadastrar(aluno);
 
     expect(cadastro.getAlunos().length).toBe(1);
     aluno = cadastro.getAlunos()[0];
@@ -28,12 +28,12 @@ describe("O cadastro de alunos", () => {
     var aluno: Aluno = new Aluno();
     aluno.nome = "Mariana";
     aluno.cpf = "683";
-    cadastro.criar(aluno);
+    cadastro.cadastrar(aluno);
 
     aluno = new Aluno();
     aluno.nome = "Pedro";
     aluno.cpf = "683";
-    cadastro.criar(aluno);
+    cadastro.cadastrar(aluno);
 
     expect(cadastro.getAlunos().length).toBe(1);
   })
